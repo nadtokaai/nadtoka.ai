@@ -3,10 +3,10 @@
   --color-surface: #ffffff;
   --color-ink: #111111;
   --color-ink-2: #444444;
-  --color-ink-3: #777777;
-  --color-ink-4: #aaaaaa;
-  --color-ink-5: #cccccc;
-  --color-rule: #e0dcd4;
+  --color-ink-3: #5c5c5c;
+  --color-ink-4: #6a6a6a;
+  --color-ink-5: #b0b0b0;
+  --color-rule: #d8d3c8;
   --color-rule-strong: #111111;
 
   --font-display: "Playfair Display", serif;
@@ -16,8 +16,32 @@
   --max-width: 760px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #16140f;
+    --color-surface: #1f1c16;
+    --color-ink: #f3f1ec;
+    --color-ink-2: #cfcac0;
+    --color-ink-3: #a39d92;
+    --color-ink-4: #8a8478;
+    --color-ink-5: #6b655a;
+    --color-rule: #3a352c;
+    --color-rule-strong: #f3f1ec;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+}
+
 * {
   box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
 }
 
 html,
@@ -161,8 +185,9 @@ h3 {
 
 .site-header .wrap {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo {
@@ -173,6 +198,8 @@ h3 {
 
 .site-nav {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -212,7 +239,7 @@ h3 {
 
 .service-num {
   font-family: var(--font-mono);
-  color: var(--color-ink-5);
+  color: var(--color-ink-4);
   font-size: 13px;
 }
 
