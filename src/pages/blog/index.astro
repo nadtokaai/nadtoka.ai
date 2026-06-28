@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+---
+
+<Base title="Writing — Nadtoka AI" description="Guides, walkthroughs, and notes on using AI to work less.">
+  <section class="fade-up">
+    <h1 class="text-hero">Writing</h1>
+    <p class="text-lede" style="margin-top: 16px;">
+      Guides, walkthroughs, and notes on using AI to work less.
+    </p>
+  </section>
+
+  <hr class="rule-strong" />
+
+  <section>
+    {posts.map((post) => (
+      <div class="post-row">
+        <a href={`/blog/${post.id}/`}>
+          <span class="post-date">{formatDate(post.data.date)}</span>
+          <h2 class="post-hed">{post.data.title}</h2>
+          <p class="post-dek">{post.data.dek}</p>
+        </a>
+      </div>
+    ))}
+  </section>
+</Base>

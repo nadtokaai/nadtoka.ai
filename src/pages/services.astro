@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+
+const services = [
+  {
+    num: '01',
+    title: 'Done-for-you automation',
+    body: [
+      "You describe the problem; I handle the rest. I sit down with how your business actually runs — not how the org chart says it runs — and find where time is leaking into repetitive, low-judgment work: data entry, follow-ups, status updates, scheduling.",
+      "Then I build the automation using n8n, AI agents, and whatever combination of tools fits the job. No bloated platform you have to learn. Just a system that quietly does the task the same way every time, without you in the loop.",
+      "You get a working system, documentation on how it runs, and the ability to call me when something needs to change.",
+    ],
+  },
+  {
+    num: '02',
+    title: 'Consulting',
+    body: [
+      "Sometimes you don't need a build — you need an outside set of eyes. A focused session where we walk through your week, hour by hour if needed, and find the biggest time leaks.",
+      "I'll leave you with a concrete plan: what to automate first, what tools make sense for your specific workflow, and what order to tackle things in so you see results fast instead of stalling on a big rebuild.",
+      "If you decide you want it built, that becomes done-for-you work. If you want to build it yourself, you walk away with the blueprint either way.",
+    ],
+  },
+  {
+    num: '03',
+    title: 'DIY guides & newsletter',
+    body: [
+      "Not everyone wants to hand this off, and that's fine — some of the best systems I run started as something I built myself, badly, and then improved.",
+      "Every week I write a free walkthrough breaking down a real automation: the trigger, the logic, the tools, the mistakes I made building it. No theory without a working example attached.",
+      "If you'd rather learn the craft than outsource it, this is built for you.",
+    ],
+  },
+];
+---
+
+<Base
+  title="Services — Nadtoka AI"
+  description="Done-for-you automation, consulting, and free guides for agents who want to work less and live more."
+>
+  <section class="fade-up">
+    <span class="text-label">Services</span>
+    <h1 class="text-hero" style="margin-top: 12px; font-size: 44px;">What I offer</h1>
+  </section>
+
+  <hr class="rule-strong" />
+
+  {services.map((service, i) => (
+    <section class="scroll-reveal" style="margin-bottom: 48px;">
+      <span class="service-num" style="font-size: 14px;">{service.num}</span>
+      <h2 class="text-h2" style="margin-top: 6px;">{service.title}</h2>
+      <div class="text-body" style="margin-top: 14px; max-width: 600px;">
+        {service.body.map((p) => <p>{p}</p>)}
+      </div>
+      <p style="margin-top: 8px;">
+        <a href="/contact" class="text-nav">Get in touch →</a>
+      </p>
+      {i < services.length - 1 && <hr class="rule" />}
+    </section>
+  ))}
+</Base>

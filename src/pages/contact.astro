@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+// TODO: replace with the real Google Form link — [GOOGLE_FORM_LINK]
+const GOOGLE_FORM_LINK = '[GOOGLE_FORM_LINK]';
+---
+
+<Base
+  title="Contact — Nadtoka AI"
+  description="Get in touch with Vlad Nadtoka about automation, consulting, or the newsletter."
+>
+  <section class="fade-up">
+    <span class="text-label">Contact</span>
+    <h1 class="text-hero" style="margin-top: 12px; font-size: 44px;">Let's talk</h1>
+  </section>
+
+  <hr class="rule-strong" />
+
+  <section class="fade-up text-body" data-delay="1" style="max-width: 560px;">
+    <p>
+      Whether you want to explore automations for your business, book a consulting session, or
+      just say hello — reach out.
+    </p>
+
+    <div class="cta-bar" style="margin-top: 28px;">
+      <span class="cta-text">Email me directly</span>
+      <a href="mailto:vlad@nadtoka.ai" class="cta-link">vlad@nadtoka.ai →</a>
+    </div>
+
+    <div class="cta-bar">
+      <span class="cta-text">Join the free weekly newsletter</span>
+      <a href={GOOGLE_FORM_LINK} class="cta-link">Subscribe →</a>
+    </div>
+  </section>
+</Base>
