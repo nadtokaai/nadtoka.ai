@@ -87,6 +87,10 @@ h1.text-hero {
   margin: 0;
 }
 
+.hero-section {
+  padding: 52px 0 44px;
+}
+
 .text-h2,
 h2 {
   font-family: var(--font-display);
@@ -193,7 +197,7 @@ h3 {
 .logo {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 24px;
 }
 
 .site-nav {
